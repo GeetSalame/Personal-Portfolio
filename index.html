@@ -9,12 +9,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400&family=Noto+Sans+JP:wght@100&family=Noto+Sans+KR:wght@700;900&family=Roboto&display=swap');
 
-        :root{
-            --theme-pri : white;
-            --theme-sec : red;
-            --theme-ter : blue;
+        :root {
+            --theme-pri: white;
+            --theme-sec: red;
+            --theme-ter: blue;
         }
-        
+
         * {
             padding: 0;
             margin: 0;
@@ -28,6 +28,7 @@
 
         #sec1 {
             background-image: url(./img/developer_img1.jpg);
+            background-attachment: fixed;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -48,7 +49,7 @@
         }
 
         .head {
-            border: 2px solid red;
+            /* border: 2px solid red; */
             min-height: 100vh;
             width: 100%;
             display: flex;
@@ -72,21 +73,23 @@
             animation: text-reveal 1s ease forwards;
             /* animation-delay: 1.5s; */
         }
-        #headName h1:nth-child(1){
+
+        #headName h1:nth-child(1) {
             animation-delay: 1.5s;
         }
-        #headName h1:nth-child(2){
+
+        #headName h1:nth-child(2) {
             animation-delay: 2.5s;
         }
 
-        @keyframes text-reveal{
-            100%{
+        @keyframes text-reveal {
+            100% {
                 color: var(--theme-pri);
             }
         }
 
-        
-        #headName h1 span{
+
+        #headName h1 span {
             position: absolute;
             top: 0;
             left: 0;
@@ -96,23 +99,27 @@
             animation: text-reaveal-box 1s ease;
             /* animation-delay: 1s; */
         }
-        #headName h1:nth-child(1) span{
+
+        #headName h1:nth-child(1) span {
             animation-delay: 1s;
         }
-        #headName h1:nth-child(2) span{
+
+        #headName h1:nth-child(2) span {
             animation-delay: 2s;
         }
 
-        @keyframes text-reaveal-box{
-            0%{
+        @keyframes text-reaveal-box {
+            0% {
                 width: 0;
                 left: 0;
             }
-            50%{
+
+            50% {
                 width: 100%;
                 left: 0;
             }
-            100%{
+
+            100% {
                 width: 0;
                 left: 100%;
             }
@@ -134,17 +141,114 @@
             transition: .3s ease;
             transition-property: background-color, color;
         }
-        #headButton:hover{
+
+        #headButton:hover {
             /* border: 2px solid gray; */
             background-color: rgba(255, 0, 0, 0.1);
             color: white;
+        }
+
+        /* Section 2 */
+        .sec2 {
+            /* border: 2px solid blue; */
+            padding: 50px 0;
+        }
+
+        .head2 {
+            /* border: 2px solid red; */
+            margin: 0 5% 10px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            text-align: center;
+        }
+
+        /* .head2 img{
+            border: 2px solid red;
+            margin: 0 auto;
+            height: 5rem;
+            width:fit-content;
+        } */
+        .head2 h1 {
+            text-transform: uppercase;
+            margin: 1% 0;
+            font-size: 2rem;
+            color: var(--theme-sec);
+            text-shadow: 1px 1px 0px black;
+            letter-spacing: .2rem;
+            /* color: white; */
+            transition: all 0.5s;
+        }
+
+        .head2 h1:hover {
+            text-shadow: 10px 10px 10px silver;
+        }
+
+        .content2 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            /* border: 2px solid red; */
+            /* margin: -10px; */
+        }
+
+        .box {
+            /* border: 2px solid red; */
+            height: fit-content;
+            width: 300px;
+            margin: 10px 20px;
+            padding: 30px 20px;
+            text-align: center;
+            background-color: gray;
+            color: white;
+            border-radius: 10px;
+            background-image: url('/img/box-bg.jpg');
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            /*This is to make image stay under curved borders*/
+            transition: all .5s ease;
+            /* background-size: cover; */
+            /* background-position: center; */
+            box-shadow: 2px 2px 1px black;
+        }
+
+        .box::after {
+            content: '';
+            position: absolute;
+            background-color: black;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 10px 10px 10px silver;
+            /* border: 2px solid black; */
+        }
+
+        .box h2 {
+            padding: 5% 0;
+            font-size: larger;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+        }
+
+        .box p {
+            font-size: medium;
         }
     </style>
 </head>
 
 <body>
-    
-<!-- First section -->
+
+    <!-- First section -->
     <section id="sec1">
         <div class="head">
             <div id="headName">
@@ -155,9 +259,60 @@
         </div>
     </section>
 
-<!-- Second Section -->
+    <!-- Second Section -->
     <section class="sec2">
-
+        <div class="head2">
+            <!-- <img src="/img/service-icon.png" alt="services"> -->
+            <h1>Services</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, quasi sunt. Reprehenderit architecto
+                placeat voluptatum aliquam veniam, iste repudiandae dolor nesciunt numquam unde necessitatibus debitis
+                doloremque, culpa commodi.</p>
+        </div>
+        <div class="content2">
+            <div class="box box1">
+                <img src="/img/service-icon.png" alt="skill">
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
+                    molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
+                    obcaecati!</p>
+            </div>
+            <div class="box box2"><img src="/img/service-icon.png" alt="skill">
+                <h2>Programming</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
+                    molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
+                    obcaecati!</p>
+            </div>
+            <div class="box box3"><img src="/img/service-icon.png" alt="skill">
+                <h2>Photo Editing</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
+                    molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
+                    obcaecati!</p>
+            </div>
+            <div class="box box7"><img src="/img/service-icon.png" alt="skill">
+                <h2>Video Editing</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
+                    molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
+                    obcaecati!</p>
+            </div>
+            <div class="box box4"><img src="/img/service-icon.png" alt="skill">
+                <h2>Gaming</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
+                    molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
+                    obcaecati!</p>
+            </div>
+            <div class="box box5"><img src="/img/service-icon.png" alt="skill">
+                <h2>Memes</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
+                    molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
+                    obcaecati!</p>
+            </div>
+            <div class="box box6"><img src="/img/service-icon.png" alt="skill">
+                <h2>Logical Thinking</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
+                    molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
+                    obcaecati!</p>
+            </div>
+        </div>
     </section>
 </body>
 
