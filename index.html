@@ -24,10 +24,11 @@
         html {
             font-size: 20px;
             font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        #sec1 {
-            background-image: url(./img/developer_img1.jpg);
+        .sec1 {
+            background-image: url(img/developer_img1.jpg);
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
@@ -36,7 +37,7 @@
             color: white;
         }
 
-        #sec1::after {
+        .sec1::after {
             content: '';
             position: absolute;
             left: 0;
@@ -156,9 +157,10 @@
         }
 
         /* Section 2 */
-        .sec2 {
+        .sec2,
+        .sec3 {
             /* border: 2px solid blue; */
-            padding: 50px 0;
+            padding-top: 50px;
         }
 
         .head2 {
@@ -215,7 +217,9 @@
             background-color: gray;
             color: white;
             border-radius: 10px;
-            background-image: url('/img/box-bg.jpg');
+            background-image: url('img/box-bg.jpg');
+            background-attachment: fixed;
+            background-position: left;
             position: relative;
             z-index: 1;
             overflow: hidden;
@@ -234,7 +238,7 @@
             top: 0;
             height: 100%;
             width: 100%;
-            opacity: 0.8;
+            opacity: 0.9;
             z-index: -1;
         }
 
@@ -313,17 +317,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
             margin-top: 50px;
             padding: 30px 0;
             /* background-color: var(--theme-sec); */
-            background-image: url('/img/developer_img1.jpg');
+            background-image: url('img/developer_img1.jpg');
             background-position: center;
             background-attachment: fixed;
             background-size: cover;
             position: relative;
             z-index: 1;
         }
-        .footer::after{
+
+        .footer::after {
             content: '';
             position: absolute;
             left: 0;
@@ -347,13 +353,15 @@
 
         .footer ul li {
             display: flex;
+            flex-wrap: wrap;
             /* border: 2px solid red; */
             margin: 10px;
             justify-content: center;
             align-items: center;
             transition: all .1s ease;
         }
-        .footer li:hover{
+
+        .footer li:hover {
             transform: scale(1.05);
         }
 
@@ -362,17 +370,89 @@
             filter: invert();
             margin: 0 5px;
         }
-        .footer a{
+
+        .footer a {
             color: var(--theme-pri);
             text-decoration: none;
+        }
+
+        .nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: 10;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+            /* border: 2px solid red; */
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: .5rem;
+            /* border: 2px solid red; */
+            margin: 10px 50px;
+            cursor: pointer;
+        }
+
+        .logo span {
+            color: var(--theme-sec);
+            font-weight: 900;
+        }
+
+        .hlinks ul {
+            display: flex;
+            list-style: none;
+            /* border: 2px solid yellow; */
+            margin: 0 50px;
+        }
+
+        .hlinks ul li {
+            /* border: 2px solid red; */
+            margin: 0 20px;
+        }
+
+        .hlinks ul li a {
+            /* border: 2px solid red; */
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all .3s ease;
+        }
+        .hlinks ul li a:hover {
+            /* border: 2px solid red; */
+            color: var(--theme-sec);
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Nav section -->
+    <nav class="nav">
+        <div class="logo"><a style="text-decoration: none; color: inherit; font: inherit;" href="#home">
+                <span>G</span>eet <span>S</span>alame
+            </a>
+        </div>
+        <div class="hlinks">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- First section -->
-    <section id="sec1">
+    <section id="home" class="sec1">
         <div class="head">
             <div id="headName">
                 <h1>Hello, <span></span></h1>
@@ -383,9 +463,9 @@
     </section>
 
     <!-- Second Section -->
-    <section class="sec2">
+    <section id="services" class="sec2">
         <div class="head2">
-            <!-- <img src="/img/service-icon.png" alt="services"> -->
+            <!-- <img src="img/service-icon.png" alt="services"> -->
             <h1>Services</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, quasi sunt. Reprehenderit architecto
                 placeat voluptatum aliquam veniam, iste repudiandae dolor nesciunt numquam unde necessitatibus debitis
@@ -393,53 +473,53 @@
         </div>
         <div class="content2">
             <div class="box box1">
-                <img src="/img/service-icon.png" alt="skill">
+                <img src="img/service-icon.png" alt="skill">
                 <h2>Web Design</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
                     molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
                     obcaecati!</p>
             </div>
-            <div class="box box2"><img src="/img/service-icon.png" alt="skill">
+            <div class="box box2"><img src="img/service-icon.png" alt="skill">
                 <h2>Programming</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
                     molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
                     obcaecati!</p>
             </div>
-            <div class="box box3"><img src="/img/service-icon.png" alt="skill">
+            <div class="box box3"><img src="img/service-icon.png" alt="skill">
                 <h2>Photo Editing</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
                     molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
                     obcaecati!</p>
             </div>
-            <div class="box box7"><img src="/img/service-icon.png" alt="skill">
+            <div class="box box7"><img src="img/service-icon.png" alt="skill">
                 <h2>Video Editing</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
                     molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
                     obcaecati!</p>
             </div>
-            <div class="box box4"><img src="/img/service-icon.png" alt="skill">
+            <div class="box box4"><img src="img/service-icon.png" alt="skill">
                 <h2>Gaming</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
                     molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
                     obcaecati!</p>
             </div>
-            <div class="box box5"><img src="/img/service-icon.png" alt="skill">
+            <!-- <div class="box box5"><img src="img/service-icon.png" alt="skill">
                 <h2>Memes</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
                     molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
                     obcaecati!</p>
-            </div>
-            <div class="box box6"><img src="/img/service-icon.png" alt="skill">
+            </div> -->
+            <div class="box box6"><img src="img/service-icon.png" alt="skill">
                 <h2>Logical Thinking</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid alias sint ducimus vitae, quaerat
-                    molestiae blanditiis atque suscipit nemo cum debitis et sed sit repellendus quo ea qui accusamus
-                    obcaecati!</p>
+                    molestiae blanditiis atque suscipit nemo ! madafaka yeahhhh dha dha dha dha sa sa sa ni pa da mada
+                    faka</p>
             </div>
         </div>
     </section>
 
     <!-- Third Section -->
-    <section class="sec3">
+    <section id="about" class="sec3">
         <div class="head3">
             <h1>About Me</h1>
             <h5>Web Developer</h5>
@@ -448,24 +528,24 @@
                 obcaecati.</p>
         </div>
         <div class="content3">
-            <img src="/img/me.jpg" alt="Geet Salame">
+            <img src="img/me.jpg" alt="Geet Salame">
             <a href="http://">Download Resume</a>
         </div>
     </section>
 
     <!-- Footer Section -->
-    <section class="footer">
+    <section id="connect" class="footer">
         <h2>Let's Connect</h2>
         <ul>
             <li>
-                <img src="/img/linkedin.png" alt="">
+                <img src="img/linkedin.png" alt="">
                 <a href="https://www.linkedin.com/in/geet-salame-57a6a71b6/" target="_blank">LinkedIn</a>
             </li>
-            <li><img src="/img/github.png" alt=""><a href="https://github.com/GeetSalame" target="_blank">Github</a>
+            <li><img src="img/github.png" alt=""><a href="https://github.com/GeetSalame" target="_blank">Github</a>
             </li>
-            <li><img src="/img/twitter.png" alt=""><a href="https://twitter.com/GeetSalame" target="_blank">Twitter</a>
+            <li><img src="img/twitter.png" alt=""><a href="https://twitter.com/GeetSalame" target="_blank">Twitter</a>
             </li>
-            <li><img src="/img/instagram.png" alt=""><a href="https://www.instagram.com/i__am__geet/"
+            <li><img src="img/instagram.png" alt=""><a href="https://www.instagram.com/i__am__geet/"
                     target="_blank">Instagram</a></li>
         </ul>
     </section>
