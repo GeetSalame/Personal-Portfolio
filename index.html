@@ -363,6 +363,7 @@
 
         .footer li:hover {
             transform: scale(1.05);
+            /* text-shadow: 0 0 5px rgba(0, 0, 255, 0.9); */
         }
 
         .footer img {
@@ -381,7 +382,10 @@
             left: 0;
             top: 0;
             width: 100vw;
-            background-color: rgba(0, 0, 0, .8);
+            background-color: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(3px);
+            border: 1px solid rgba(255, 255 , 255, .1);
+            /* border-radius: 10px; */
             z-index: 10;
             display: flex;
             flex-wrap: wrap;
@@ -400,11 +404,15 @@
             /* border: 2px solid red; */
             margin: 10px 50px;
             cursor: pointer;
+            /* text-shadow: 0 0 50px var(--theme-sec); */
         }
 
         .logo span {
             color: var(--theme-sec);
             font-weight: 900;
+        }
+        .logo:hover {
+            text-shadow: 0px 0px 10px rgba(255, 0, 0, .5);
         }
 
         .hlinks ul {
@@ -458,7 +466,7 @@
                 <h1>Hello, <span></span></h1>
                 <h1>I am Geet <span></span></h1>
             </div>
-            <a href="#" type="button" id="headButton">Portfolio</a>
+            <a href="https://github.com/GeetSalame" target="_blank" type="button" id="headButton">Portfolio</a>
         </div>
     </section>
 
@@ -529,7 +537,7 @@
         </div>
         <div class="content3">
             <img src="img/me.jpg" alt="Geet Salame">
-            <a href="http://">Download Resume</a>
+            <a href="https://www.linkedin.com/in/geet-salame-57a6a71b6/" target="_blank">Download Resume</a>
         </div>
     </section>
 
