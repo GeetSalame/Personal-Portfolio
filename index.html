@@ -401,7 +401,7 @@
             font-weight: 200;
             text-transform: uppercase;
             letter-spacing: .5rem;
-            border: 2px solid red;
+            /* border: 2px solid red; */
             margin: 10px auto;
             cursor: pointer;
             /* text-shadow: 0 0 50px var(--theme-sec); */
@@ -416,7 +416,7 @@
         }
 
         .hlinks{
-            border: 2px solid red;
+            /* border: 2px solid red; */
             margin: 10px auto;
         }
         .hlinks ul {
@@ -472,14 +472,59 @@
             .hlinks ul li{
                 margin: 0 10px;
             }
+
+            #headName h1{
+                font-size: 1.8rem;
+            }
+            .head2 h1, .head3 h1{
+                font-size: 1.5rem;
+            }
+            .head2 p, .head3 p{
+                font-size: small;
+            }
+            .box h2{
+                font-size: medium;
+            }
+            .box p{
+                font-size: small;
+            }
+
+            .content3 img{
+                width: 100px;
+            }
+            .content3 a{
+                font-size: .5rem;
+            }
+            .box img{
+                width: 50px;
+            }
+            #headButton{
+                font-size: .5rem;
+            }
         }
         @media screen and (max-width : 372px){
+            #headName h1{
+                font-size: 1.5rem;
+            }
             .hlinks ul li a{
                 font-size: .5rem;
             }
             .logo{
                 font-size: .8rem;
                 margin: 0 auto;
+            }
+
+            .head2 h1, .head3 h1{
+                font-size: 1rem;
+            }
+            .head2 p, .head3 p{
+                font-size: x-small;
+            }
+            .box h2{
+                font-size: small;
+            }
+            .box p{
+                font-size: x-small;
             }
             
         }
@@ -489,6 +534,9 @@
             }
             .logo{
                 font-size: .5rem;
+            }
+            .footer h2{
+                font-size: .8rem;
             }
             
         }
